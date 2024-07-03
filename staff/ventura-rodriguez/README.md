@@ -9,3 +9,7 @@ Estos son mis apuntes de git.
 ```
 
 Este comando nos permite ver el estado actual de git
+
+```js
+  git cehckout <branch_name>
+```
