@@ -26,4 +26,4 @@ function countVocals(chain) {
   console.assert(result3 === 2, {result: result3, message: 'Test 3 no ha pasado'})
   
   var result4 =  countVocals('Kun Agüero')
-  console.assert(result4 === 5, {result: result4, message: 'Test 4 no ha pasado'})
+  console.assert(result4 === 5, {result: result4, message: 'Test 4 no ha pasado'})git s
