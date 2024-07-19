@@ -1,16 +1,10 @@
-// NO CHATGPT
-
 function countVocals(chain) {
   var counter = 0;
-  var vocals = ["a", "e", "i", "o", "u", "é", "A", "ü", "Á"];
+  var vocals = ["a", "e", "i", "o", "u", "é", "A", "ü"];
 
   for (var i = 0; i < chain.length; i++) {
-    var character = chain[i];
-
-    for (var x = 0; x < vocals.length; x++) {
-      var vocal = vocals[x];
-
-      if (vocal === character) {
+    for (var j = 0; j < vocals.length; j++) {
+      if (chain[i] === vocals[j]) {
         counter++;
       }
     }
@@ -19,7 +13,6 @@ function countVocals(chain) {
   return counter;
 }
 
-debugger;
 var result1 = countVocals("hola");
 console.assert(result1 === 2, {
   result: result1,
@@ -38,8 +31,8 @@ console.assert(result3 === 2, {
   message: "Test 3 no ha pasado",
 });
 
-var result5 = countVocals("Ávila");
-console.assert(result5 === 3, {
-  result: result5,
-  message: "Test 5 no ha pasado",
+var result4 = countVocals("Kun Agüero");
+console.assert(result4 === 5, {
+  result: result4,
+  message: "Test 4 no ha pasado",
 });
