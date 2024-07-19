@@ -3,7 +3,11 @@
 // NO CHAT GPT
 
 function countingLetters(value) {
-  var result;
+  var result = 0;
+
+  for (var i = 0; i < value.length; i++) {
+    result++;
+  }
 
   return result;
 }
