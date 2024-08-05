@@ -7,10 +7,13 @@
 // Por ultimo mando mi result como return de la funcion. 
 
 
+// Miro variables y scopes en el debugger
+
 function toUpperCase (string){
   let result = "";
   const converter = [
   ["a", "A"],
+  ["á", "Á"],
   ["b", "B"],
   ["c", "C"],
   ["d", "D"],
@@ -56,7 +59,7 @@ return result
 }
 
 {
-  
+
 const result1 = toUpperCase("¡Me siento bieN, porque eL sofá Es Nuevo!")
 console.assert(result1 === "¡Me siento bieN, porque eL sofá Es Nuevo!".toUpperCase(),
   {
@@ -102,6 +105,3 @@ console.assert(result3 === "null vaLue".toUpperCase(),
 // Luego me creo un if en donde voy a analizar si los caracteres de cada vuelta estan en mayuscula, y si es asi
 // los guardo como estan en mi cadena result y si no, los convierto y los guardo en mi cadena result
 // Por ultimo mando mi result como return de la funcion. 
-
-
-//ERROR EN EL PRIMER TEST :(
