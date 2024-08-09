@@ -1,62 +1,59 @@
-function includes(string) {
-    let search = ''
-    let length = ''  //error 
-                        
-// y una variable llamada length? tengo que analizar si mi subcadena se encuentra
-// dentro de mi cadena
+// El método includes() de String values realiza una búsqueda q
+// distingue entre mayúsculas y minúsculas para determinar si una 
+// cadena dada se puede encontrar dentro de esta cadena, y devuelve 
+// verdadero o falso según corresponda.
 
-    for (let i = 0; i <= string.length; i++) { // luego me creo un for con la condicion de parada de todo el contenido a analizar y comparo.
-        let found = true;
+// Case sensitive. 
 
-         for (let j = 0; j < search.length; j++) {
-            if (string[i + j] !== search[j]) {
-                found = false;
-                break;
-            }
+// Parametros de entrada searchString, position (optional)
+// Parametro de salida true or false. Case sensitive. 
+
+// mi funcion includes busca comparar si un string se encuentra
+// dentro de mi string. si se encuentra devuelve true, si no false 
+
+
+
+function includes(string, searchString) {
+
+    for (let i = 0; i < string.length; i++) {
+        let subString = "";
+        
+        for (let j = 0; j < searchString.length; j++) {
+            subString += string[i + j];
+    }
+        if (subString === searchString)
+            return true;
         }
 
-
-     return result
+    return false
 }
 
 
 {
-
- const result1 = includes("tengo que terminar a tiempo");
- console.assert(
-     result1 === "tengo que terminar a tiempo".includes(), 
+    const result1 = includes("tengo que terminar a tiempo", "terminar");
+    console.assert(
+        result1 === "tengo que terminar a tiempo".includes("terminar"), 
         {
-     result: result1,
-     message: "Test 1 no pasado",
-        
-    });
+            result: result1,
+            message: "Test 1 no pasado",
+        }
+    );
 
-     const result2 = includes("a tiempo no voy a terminar");
- console.assert(
-     result2 === "a tiempo no voy a terminar".includes(), 
+    const result2 = includes("a tiempo no voy a terminar", "tiempo");
+    console.assert(
+        result2 === "a tiempo no voy a terminar".includes("tiempo"), 
         {
-     result: result2,
-     message: "Test 2 no pasado",
-        
-    });
+            result: result2,
+            message: "Test 2 no pasado",
+        }
+    );
 
-
- }
+     const result3 = includes("a tiempo no voy a terminar", "casa");
+    console.assert(
+        result3 === "a tiempo no voy a terminar".includes("casa"), 
+        {
+            result: result3,
+            message: "Test 3 no pasado",
+        }
+    );
 }
-
-
-// let searchLength = search.length
-// includes, necesitas verificar si una subcadena (o "search term") está presente en una cadena principal. 
-// La función includes en JavaScript se utiliza para determinar si 
-// una cadena contiene una subcadena específica y devuelve un valor booleano (true o false).
-
-
-// crear una variable llamada search que va a ser la cadena de string a devolver 
-// y una variable llamada length? tengo que analizar si mi subcadena se encuentra
-// dentro de mi cadena
-// luego me creo un for con la condicion de parada de todo el contenido a analizar 
-// y comparo. Despues de la primer linea del for me guardo el booleano true
-
-// Luego me creo un for en donde voy a analizar el largo de mi subcadena y ver si matchea con mi contenido de candena
-// los guardo como estan en mi cadena result y si no, los convierto y los guardo en mi cadena result
-// Por ultimo mando mi result como return de la funcion. 
