@@ -1,43 +1,50 @@
+// El método repeat() de String values construye y devuelve una nueva cadena 
+// que contiene la cantidad especificada de copias de esta cadena, 
+// concatenadas entre sí.
 
-function repeat(string) {
-    let result = '';
-    
-    for(let i = 0; i < string.length; i++) {
-        const character = string[i];
-    
-        if(repeat === string[0])
-        result += string
+// me creo una funcion que recorra mi cadena de string y construya una nueva cadena 
+// en base a la cantidad de veces que debe copiarla. 
+
+// me creo una funcion repeat (string y count), creo una variable
+// result vacia. me creo un for que recorra mi count. 
+// devuelvo como resultado += string. por ultimo return result
+
+
+function repeat(string, count) {
+    let result = ''
+  
+       for (let i = 0; i < count; i++) {
+          result += string;
     }
-    
-    return result;
-    
-    }
-    
-    
-    {
-    const result1 = repeat("belen");
-    console.assert (
-        result1 === "belen".repeat(), 
-        {
-          result: result1,
-          message: "Test 1 no pasado",
-        
-    });
-    
-    const result2 = repeat("nose");
-    console.assert (
-        result2 === "nose".repeat(), 
-        {
-          result: result2,
-          message: "Test 2 no pasado",
-    
-    });
-    
-    }
+  
+      return result
+  }
+  
+  {
+    const result1 = repeat("b", 3);
+    console.assert(
+      result1 === "b".repeat(3),
+      {
+        result: result1,
+        message: "Test 1 no pasado",
+      }
+    );
+  
+    const result2 = repeat("nose", 2);
+    console.assert(
+      result2 === "nose".repeat(2),
+      {
+        result: result2,
+        message: "Test 2 no pasado",
+      }
+    );
+  }
 
-// tengo que crear una funcion en donde mi contenido de strings se analice y se repita 
-// las veces que yo quiera
+// mi funcion que simula el metodo de string repeat original
+// el ej se ha resuelto TDD 
+// los test explicados, como se comporta, como deberia y lo q pasa si si o si no 
+// por ultimo definir el esquema o funcion 
+// parametro de entrada de salida 
 
-// mi funcion tiene el objetivo de devolverme como resultado mi palabra 
-// repetida las veces que yo quiera
-
+// concatenar 
+// count numero de vueltas 

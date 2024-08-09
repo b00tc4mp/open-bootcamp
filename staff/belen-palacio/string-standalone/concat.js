@@ -1,41 +1,37 @@
-function concat(string) {
-    let result = ''
+// El método concat() de String values concatena los argumentos 
+// de la cadena a esta cadena y devuelve una nueva cadena.
+// parametro de entrada los strings que sean, string1, string2, ... 
+// parametro de salida una nueva cadena. 
 
-    for (let i = 0; i < string.length; i++) {
-        result += string[i]; {
-            
-        }
-
+// recorrer las cadenas y devolver result 
 
 
-    return result
-        
+function concat(...strings) {
+  let result = '';
+
+  for (let i = 0; i < strings.length; i++) {
+      result += strings[i]; 
+  }
+
+  return result;
 }
 
 {
-        
-    const result1 = concat("hola", "que", "tal");
-        console.assert(
-          result1 === "hola", "que", "tal".concat(),
-          {
-            result: result1,
-            message: "Test 1 no pasado",
-          }
-        );
-      
-        const result2 = concat("chau", "que", "tal");
-        console.assert(result2 === "chau", "que", "tal".concat(), 
-        
-        {
+  const result1 = concat("que", "tal");
+  console.assert(
+      result1 === "quetal".concat(),
+      {
+          result: result1,
+          message: "Test 1 no pasado",
+      }
+  );
+
+  const result2 = concat(1, 2, 3);
+  console.assert(
+      result2 === "123".concat(),
+      {
           result: result2,
           message: "Test 2 no pasado",
-        }
-        );
-
+      }
+  );
 }
-}
-
-// en mi funcion concat lo quiero lograr es que se analice el contenido de mi string
-// y dentro de ello me una todas mis palabras como devolucion 
-
-// crear una funcion que me combina mi cadena de texto con otra, ya sea diferente o ya existente
