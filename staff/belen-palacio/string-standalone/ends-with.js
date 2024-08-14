@@ -1,36 +1,49 @@
+// El método endsWith() de String values determina si una cadena termina 
+// con los caracteres de esta cadena y devuelve verdadero o falso según corresponda.
 
+// Parametro de entrada searchString, parametro de salida true or false
 
-function endsWith(string) {
-    let search = '';
-    let position = 0 
-   
-    
-    for (let i = 0; i < search.length; i++) { // luego me creo un for con la condicion de parada de todo el contenido a analizar y comparo.
-        if (string[position + i] !== search[i]) {
-            return false;
-        }
-    }
-    return true;
+// Me creo una funcion con parametros de entrada de tipo string, string y searchString
+// creo una variable que se defina como startIndex y sea el largo de mi string menos
+// el largo de mi searchString para determinar la posición en string donde comienza 
+// la subcadena que debería coincidir con searchString.
+// Luego creo un for que recorra el largo de mi searchString y 
+
+// Si cualquier carácter en la subcadena final de string no coincide con 
+// el carácter correspondiente en searchString, la función retorna false.
+// de lo contrario return true. 
+
+function endsWith(string, searchString) {
+  const startIndex = string.length - searchString.length;
+
+    for (let i = 0; i < searchString.length; i++) {
+      if (string[startIndex + i] !== searchString[i]) {   
+          return false
+      }
+  }
+
+  return true
+}
 
 {
-        const result1 = endsWith("Hola mundo");
-        console.assert(
-          result1 === "Hola mundo".endsWith(),
-          {
-            result: result1,
-            message: "Test 1 no pasado",
-          }
-        );
+
+const result1 = endsWith("tengo que terminar a tiempo", "tiempo");
+console.assert(
+   result1 === "tengo que terminar a tiempo".endsWith("tiempo"), 
+      {
+   result: result1,
+   message: "Test 1 no pasado",
       
-        const result2 = endsWith("Test the function");
-        console.assert(result2 === "Test the function".endsWith(), {
-          result: result2,
-          message: "Test 2 no pasado",
-        });
+  });
+
+   const result2 = endsWith("a tiempo no voy a terminar", "terminar");
+console.assert(
+   result2 === "a tiempo no voy a terminar".endsWith("terminar"), 
+      {
+   result: result2,
+   message: "Test 2 no pasado",
+      
+  });
+
 
 }
-}
-
-//crear una funcion que me analice el contenido de mi string y luego me compare
-// si finaliza con el mismo modo que le doy
-// si es asi, que me devuelva verdadero, y si no negativo 
