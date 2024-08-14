@@ -27,7 +27,7 @@ function lastIndexOf(string, searchString) {
    return result // si no, devuelve -1
 }
 
-debugger
+
 
 {
     const result1 = lastIndexOf("Hola mundo", "o");

@@ -8,10 +8,10 @@
 // el largo de mi searchString para determinar la posición en string donde comienza 
 // la subcadena que debería coincidir con searchString.
 // Luego creo un for que recorra el largo de mi searchString y 
-
 // Si cualquier carácter en la subcadena final de string no coincide con 
 // el carácter correspondiente en searchString, la función retorna false.
 // de lo contrario return true. 
+
 
 function endsWith(string, searchString) {
   const startIndex = string.length - searchString.length;
@@ -33,7 +33,7 @@ console.assert(
       {
    result: result1,
    message: "Test 1 no pasado",
-      
+
   });
 
    const result2 = endsWith("a tiempo no voy a terminar", "terminar");
@@ -42,8 +42,16 @@ console.assert(
       {
    result: result2,
    message: "Test 2 no pasado",
-      
+
   });
 
+     const result3 = endsWith("a tiempo no voy a terminar", "termina");
+console.assert(
+   result3 === "a tiempo no voy a terminar".endsWith("termina"), 
+      {
+   result: result3,
+   message: "Test 3 no pasado",
+
+  });
 
 }
