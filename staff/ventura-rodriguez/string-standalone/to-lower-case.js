@@ -1,11 +1,3 @@
-// creo una variable llamada result que va a ser la cadena de string a devolver, la inicianizo como string
-// vacía luego me hago un for con la condición de parada que sea todo el largo de la cadena que tengo que
-// analizar. Después en la primera línea del for me guardo el caracter que voy a analizar en cada vuelta
-// en una variable llamda caracter. Después me creo un if en que voy comprobando si el caracter de
-// cada vuelta está o no en mayúsculas. si está en minúsculas lo guardo tal cual en mi cadena result
-// y si está en mayúsculas lo convierto y lo guardo en minúsculas en mi cadena result.
-// Cuando termino el for mando mi result como return de la función.
-
 function toLowerCase(string) {
   let result = "";
   const converter = [
@@ -76,26 +68,3 @@ function toLowerCase(string) {
     message: "Test 3 no pasado",
   });
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Tengo que te pone todo lo que escribas en minúscula, entonces tengo que
-// un modo para utilizar un a función en donde... puedo usar el toLowerCase
-// y pasen mis resultados, undefined, mis resultados.
-// Tengo que scar las mayusculas,
-
-// crear una funcion que devuelva mi resultado con todas las letras en lower case
-// luego de que analice cada letra y la que están en mayusculas las corrija a minúscula
-
-// Mi función que pasa una cadena de caracteres a lower case lo que hace es recorrer
-// toda la cadena de caracteres, caracter a caracter (uno a uno) y comprobar si está
-// en caracter en mayuscula o minúscula, en caso de que esté en mayuscula lo convierto en
-// minúscula. Finalmente devuelvo mi cadena de caracteres con todos en minuscula.
-
-// creo una variable llamada result que va a ser la cadena de string a devolver, la inicianizo vacía
-// luego me hago un for con la condición de parada que sea todo el largo de la cadena que tengo que
-// analizar. Después en la primera línea del for me guardo el caracter que voy a analizar en cada vuelta
-// en una variable llamda caracter. Después me creo un if en que voy comprobando si el caracter de
-// cada vuelta está o no en mayúsculas. si está en minúsculas lo guardo tal cual en mi cadena result
-// y si está en mayúsculas lo convierto y lo guardo en minúsculas en mi cadena result.
-// Cuando termino el for mando mi result como return de la función.
