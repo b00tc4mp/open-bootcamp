@@ -30,32 +30,73 @@ function split(string, separator = 0, limit = Infinity) {
       subString += string[i + j];
     }
 
-    
-    if (subString === separator) {   // si subString coincide con separator
+    if (subString === separator && result.length < limit ) {   // si subString coincide con separator ANTES del limite 
       result[result.length] = newResult;  // guardamos newResult en result
-      
       newResult = "";  // dejamos newResult para el siguiente array 
-      
       i += separator.length - 1;  // el cual tiene que comenzar despues de separator
       
       } else { 
-      
       newResult += string[i] // agrego los caracteres a newResult
     
     }
-
-     result[result.length] = newResult; // agrego la nueva cadena de newResult a result 
   }
+  
+  result[result.length] = newResult;
   
 
   return result; // devuelvo result 
 }
 
+
 {
   const result1 = split("Angela,26 años", ",");
+  function isArrayEqual(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+
+  let result = true;
+  let i = 0;
+  while (i < arr1.length || result === false) {
+    if (arr1[i] !== arr2[i]) result = false;
+    i++;
+  }
+  return result;
+}
   console.assert(
     isArrayEqual(result1, ["Angela", "26 años"]), {
     result: result1,
     message: "Test 1 No pasado",
+  });
+
+const result2 = split("Monday,Tuesday,Wednesday,Thursday", ",");
+  console.assert(
+    isArrayEqual(result2, ["Monday", "Tuesday", "Wednesday", "Thursday"]),
+    {
+      result: result2,
+      message: "Test 2 No pasado",
+    }
+  );  
+
+  const result3 = split("Monday,Tuesday,Wednesday,Thursday", ",", 2);  // ["Monday", "Tuesday", "Wednesday,Thursday"]
+  console.assert(isArrayEqual(result3, ["Monday", "Tuesday"]), {
+    result: result3,
+    message: "Test 3 No pasado",
+  });
+
+  const result4 = split("1 2 3 4 5 6", " ", 3);  // ["1", "2", "3 4 5 6"]
+  console.assert(isArrayEqual(result4, ["1", "2", "3"]), {
+    result: result4,
+    message: "Test 4 No pasado",
+  });
+
+  const result5 = split("2024-07-20", "-", 3);  // ["2024-07-20"] 
+  console.assert(isArrayEqual(result5, ["2024", "07", "20"]), {
+    result: result5,
+    message: "Test 5 No pasado",
+  });
+
+  const result6 = split("2024-07-20", " ", 3);  // ["2024-07-20"] como no hay separador devuelve newResult completo 
+  console.assert(result6[0] === "2024-07-20", {
+    result: result6,
+    message: "Test 6 No pasado",
   });
 }
