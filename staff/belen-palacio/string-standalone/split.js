@@ -40,8 +40,7 @@ function split(string, separator = 0, limit = Infinity) {
     
     }
   }
-  
-  result[result.length] = newResult;
+  if(!(limit === result.length)) result[result.length] = newResult;
   
 
   return result; // devuelvo result 
