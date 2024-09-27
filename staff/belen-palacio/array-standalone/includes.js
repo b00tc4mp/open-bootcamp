@@ -2,8 +2,9 @@
 // devuelve true or false 
 
 function includes(array, valueToFind) {
-  let i = 0;
   let result = false;  // Asumimos inicialmente que el valor no está presente
+  let i = 0;
+ 
 
   
   while (i < array.length && !result) { // i es diferente a result, ya que busco el valor 

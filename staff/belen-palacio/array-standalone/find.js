@@ -4,8 +4,9 @@
 // si el metodo esta devuelve eso si no, -1 
 
 function find(array, callback) {
-    let i = 0
-    let result = undefined // 
+  let result = undefined //   
+  let i = 0
+    
     
     while (i < array.length && result === undefined) { // si no encontramos valor, es decir que sea === undefined
         if (callback(array[i], i, array)) {

@@ -2,10 +2,7 @@
 // una posición de inicio hasta una posición final con un valor estático
 
 function fill(array, value, start = 0, end = array.length) {
-  
-  while (end > array.length) {
-    end = array.length; // corto el array si el final es mayor que la longitud del mismo 
-  } 
+
 
   for (let i = start; i < end; i++) { // para recorrerlo desde q inicia hasta q termina
     array[i] = value; // cambio el valor al que le di 

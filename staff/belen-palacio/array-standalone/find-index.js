@@ -4,8 +4,9 @@
 // si el metodo esta devuelve eso si no, -1 
 
 function findIndex(array, callback) {
-    let i = 0
-    let result = -1 // le damos valor -1 inicial 
+  let result = -1 // le damos valor -1 inicial   
+  let i = 0
+   
 
    
     while (i < array.length && result === -1) { // si no encontramos valor, es decir que sea === undefined

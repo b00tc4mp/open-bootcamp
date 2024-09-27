@@ -3,8 +3,8 @@
 // Devuelve true or false 
 
 function every(array, callback) {
-  let i = 0;
   let result = true 
+     let i = 0;
   
   while (i < array.length && result) { // siempre y cuando i sea menos que array.length y result true? estoy dentro del while
     if (!callback(array[i], i, array)) {
