@@ -1,17 +1,15 @@
 // funcion que concatena dos arrays y devuelve un nuevo array.
 
-function concat(...arrays) {
+function concat(...arguments) {
   let newArray = [];
 
-  for (let i = 0; i < arrays.length; i++) {
-    newArray[newArray.length] = arrays[i]; // agregar un nuevo elemento al final del array 
+   for (let i = 0; i < arguments.length; i++) { // un for dentro de un for 
+    for (let j = 0; j < arguments[i].length; j++) {
+      newArray[newArray.length] = arguments[i][j] // al nuevo array le agrego ambos 
+    }
   }
 
-  for (let j = 0; j < arrays.length; j++) {
-    newArray[newArray.length] = array2[j]; // agregamos el resto
-  }
-
-  return newArray; // devolvemos la concatenacion de los dos arrays
+  return newArray
 }
 
 {
