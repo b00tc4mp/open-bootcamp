@@ -1,6 +1,6 @@
 // funcion que concatena dos arrays y devuelve un nuevo array.
 
-function concat(...arguments) {
+function concat() {
   let newArray = [];
 
    for (let i = 0; i < arguments.length; i++) { // un for dentro de un for 
