@@ -1,53 +1,68 @@
-// El método copyWithin() transfiere una copia plana de una sección a otra dentro 
-// del mismo array, sin modificar su propiedad length y lo devuelve.
+function copyWithin(array, target = 0, start = 0, end = array.length) {
+  for (let i = start; i < end; i++) array[target + i - start] = array[i];
 
-// si modifica el array 
-
-function copyWithin(array, target, start, end) {
-  // for
-  // vas a usar los diferentes parámetros para "rellenar el for"
-  // target es el primer elemento dónde empiezas a copiar
-  // start es la posición en dónde empiezas a copiar
-  // end es la pisición en la que paras de copiar
-
-  // tu for va a dar x vueltas que será end - start
-    const count = end - start 
-    for (let i = 0; i < count; i++) { 
-        
-  
-  return array
+  return array;
 }
 
 {
+  function isArrayEqual(arr1, arr2) {
+    if (arr1.length !== arr2.length) return false;
 
-function isArrayEqual(arr1, arr2) {
-      if (arr1.length !== arr2.length) return false;
-
-      let result = true;
-      let i = 0;
-      while (i < arr1.length || result === false) {
-        if (arr1[i] !== arr2[i]) result = false;
-        i++;
-      }
-      return result;
+    let result = true;
+    let i = 0;
+    while (i < arr1.length || result === false) {
+      if (arr1[i] !== arr2[i]) result = false;
+      i++;
+    }
+    return result;
   }
 }
 
 {
+  const array1 = [1, 2, 3, 4, 5];
+  const nativeArray1 = [1, 2, 3, 4, 5];
+  const result1 = copyWithin(array1, 0, 3, 5); // [4, 5, 3, 4, 5]
+  const nativeResult1 = nativeArray1.copyWithin(0, 3, 5);
 
-const array1 = [1, 2, 3, 4, 5]
-const nativeArray1 = [1, 2, 3, 4, 5];
-const result1 = copyWithin(array1, 0, 3, 5); // [4, 5, 3, 4, 5]
-const nativeResult1 = nativeArray1.copyWithin(0, 3, 5); 
+  console.assert(isArrayEqual(result1, nativeResult1), {
+    result: result1,
+    message: "Test 1.1 no pasado",
+  });
 
-// console.assert(isArrayEqual(result1, nativeResult1), {
-//     result: result1,
-//     message: "Test 1.1 no pasado",
-// });
-
-console.assert(array1 === result1, {
+  console.assert(array1 === result1, {
     result: result1,
     message: "Test 1.2 no pasado",
+  });
+
+  const array2 = [1, 2, 3, 4, 5, 6];
+  const nativeArray2 = [1, 2, 3, 4, 5, 6];
+  const result2 = copyWithin(array2, -4, -3, -1); // [1, 2, 4, 5, 5, 6]
+  const nativeResult2 = nativeArray2.copyWithin(-4, -3, -1);
+
+  console.assert(isArrayEqual(result2, nativeResult2), {
+    result: result2,
+    message: "Test 2.1 no pasado",
+ });
+
+  console.assert(array2 === result2, {
+    result: result2,
+    message: "Test 2.2 no pasado",
+ });
+
+ const array3 = [10, 20, 30, 40, 50]; // parametro de start y end implicitos 
+ const nativeArray3 = [10, 20, 30, 40, 50];
+ const result3 = copyWithin(array3, 2); // [10, 20, 10, 20, 30] copio desde la posicion 2, es decir el 30
+ const nativeResult3 = nativeArray3.copyWithin(2);
+
+   console.assert(isArrayEqual(result3, nativeResult3), {
+  result: result3,
+  message: "Test 3.1 no pasado",
 });
 
+console.assert(array3 === result3, {
+  result: result3,
+  message: "Test 3.2 no pasado",
+});
+    
 }
+
