@@ -1,5 +1,14 @@
 function copyWithin(array, target = 0, start = 0, end = array.length) {
-  for (let i = start; i < end; i++) array[target + i - start] = array[i];
+
+  const copyArray = [...array]
+  
+  target = (target < 0) ? array.length + target : target
+  start = (start < 0) ? array.length + start : start
+  end = (end < 0) ? array.length + end - 1 : end
+  const stop = start + end - target
+  
+  for (let i = start; i < stop; i++)
+    array[target + i - start] = copyArray[i] ?? array[target + i - start];
 
   return array;
 }
@@ -10,7 +19,7 @@ function copyWithin(array, target = 0, start = 0, end = array.length) {
 
     let result = true;
     let i = 0;
-    while (i < arr1.length || result === false) {
+    while (i < arr1.length && result === true) {
       if (arr1[i] !== arr2[i]) result = false;
       i++;
     }
@@ -42,27 +51,25 @@ function copyWithin(array, target = 0, start = 0, end = array.length) {
   console.assert(isArrayEqual(result2, nativeResult2), {
     result: result2,
     message: "Test 2.1 no pasado",
- });
+  });
 
   console.assert(array2 === result2, {
     result: result2,
     message: "Test 2.2 no pasado",
- });
+  });
 
- const array3 = [10, 20, 30, 40, 50]; // parametro de start y end implicitos 
- const nativeArray3 = [10, 20, 30, 40, 50];
- const result3 = copyWithin(array3, 2); // [10, 20, 10, 20, 30] copio desde la posicion 2, es decir el 30
- const nativeResult3 = nativeArray3.copyWithin(2);
+  const array3 = [10, 20, 30, 40, 50]; // parametro de start y end implicitos
+  const nativeArray3 = [10, 20, 30, 40, 50];
+  const result3 = copyWithin(array3, 2); // [10, 20, 10, 20, 30] copio desde la posicion 2, es decir el 30
+  const nativeResult3 = nativeArray3.copyWithin(2);
 
-   console.assert(isArrayEqual(result3, nativeResult3), {
-  result: result3,
-  message: "Test 3.1 no pasado",
-});
+  console.assert(isArrayEqual(result3, nativeResult3), {
+    result: result3,
+    message: "Test 3.1 no pasado",
+  });
 
-console.assert(array3 === result3, {
-  result: result3,
-  message: "Test 3.2 no pasado",
-});
-    
+  console.assert(array3 === result3, {
+    result: result3,
+    message: "Test 3.2 no pasado",
+  });
 }
-
